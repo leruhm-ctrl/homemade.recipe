@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Моя книга рецептов</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="app">
+    <header class="hero">
+      <div class="tape"></div>
+      <h1>МОЯ КНИГА<br><span>РЕЦЕПТОВ</span></h1>
+      <p>рецепты как мини-журналы</p>
+    </header>
+
+    <section class="controls">
+      <input id="searchInput" type="text" placeholder="Найти рецепт...">
+      <button id="addBtn">+ Добавить рецепт</button>
+    </section>
+
+    <main id="recipesList" class="recipes"></main>
+  </div>
+
+  <div id="formModal" class="modal hidden">
+    <div class="paper form-paper">
+      <button id="closeFormBtn" class="close">×</button>
+      <h2>Новый рецепт</h2>
+
+      <label>Название рецепта</label>
+      <input id="titleInput" type="text" placeholder="Например: Пышные панкейки">
+
+      <label>Обложка рецепта</label>
+      <input id="coverInput" type="file" accept="image/*">
+
+      <label>Страницы рецепта</label>
+      <input id="pagesInput" type="file" accept="image/*" multiple>
+
+      <p class="hint">Можно выбрать сразу несколько картинок: страница 1, 2, 3...</p>
+
+      <button id="saveBtn">Сохранить рецепт</button>
+    </div>
+  </div>
+
+  <div id="viewerModal" class="modal hidden">
+    <div class="viewer">
+      <button id="closeViewerBtn" class="close viewer-close">×</button>
+
+      <h2 id="viewerTitle"></h2>
+
+      <div class="magazine">
+        <button id="prevPageBtn" class="arrow">←</button>
+        <img id="pageImage" src="" alt="Страница рецепта">
+        <button id="nextPageBtn" class="arrow">→</button>
+      </div>
+
+      <p id="pageCounter"></p>
+
+      <button id="deleteRecipeBtn" class="delete-main">Удалить рецепт</button>
+    </div>
+  </div>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>
